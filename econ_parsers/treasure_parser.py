@@ -20,6 +20,11 @@ def dict_duplicates(ordered_pairs):
   return d
 
 
+#def recursive_parse_loot(loot_list_name, loot_list, drop_rate):
+#    ll = loot_list[loot_list_name]
+#    if ll is not null:
+#    return loot_list_name
+
 drop_rate = ["common", "very_rare","extra_rare","unusual"]
 
 if __name__ == "__main__":
@@ -38,7 +43,7 @@ if __name__ == "__main__":
   items = data["items_game"]["items"];
   loot_lists = data["items_game"]["loot_lists"];
 
-  reserved_names = ["add_random_gems","add_empty_socket","additional_drop", "hero_gems_only", "can_have_duplicates","grant_one_of_each_item"]
+  reserved_names = ["add_random_gems","add_empty_socket","additional_drop", "hero_gems_only", "can_have_duplicates","grant_one_of_each_item", "ti6_battle_pass_arcanas"]
 
   print("Parsing " + str(len(items)) + " items.")
   for key, item in items.items():
@@ -71,6 +76,7 @@ if __name__ == "__main__":
               loots_dict = loot_lists[loot_list_name]
 
               for loot_key, loot_value in loots_dict.items():
+		# treasure_chest_120_fall_major_2015_coin_chest
                 if loot_key.endswith("_items") or loot_key.endswith("_sets") or loot_key.endswith("_chests") or loot_key.endswith("_wards") or loot_key.endswith("_2015"): #it is a "list pointer" 
                   itemsDict = loot_lists[loot_key];
                   for i in itemsDict.keys():

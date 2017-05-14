@@ -1,7 +1,7 @@
 import json
 import urllib
 
-apiKey = ""
+apiKey = "B562F817EA64D937FD6B42EA10264A78"
 
 if __name__ == "__main__":
   print("Starting...")
@@ -17,10 +17,16 @@ if __name__ == "__main__":
   for treasure in treasures:
     itemsToParse.append(treasure["name"])
 
-    for iDict in treasure["additional_loot"]:
+    for iDict in treasure["unusual_loot"]:
       itemsToParse.append(iDict["name"])
 
-    for iDict in treasure["regular_loot"]:
+    for iDict in treasure["common_loot"]:
+      itemsToParse.append(iDict["name"])
+
+    for iDict in treasure["very_rare_loot"]:
+      itemsToParse.append(iDict["name"])
+
+    for iDict in treasure["extra_rare_loot"]:
       itemsToParse.append(iDict["name"])
 
   #print(treasuresItems)
@@ -46,7 +52,8 @@ if __name__ == "__main__":
             itemDict={}
             itemDict["name"] = item["name"]
             itemDict["prefab"] = item["prefab"]
-            if "item_rarity" in item:
+            
+	    if "item_rarity" in item:
               itemDict["rarity"] = item["item_rarity"]
             else:
               itemDict["rarity"] = "common"
