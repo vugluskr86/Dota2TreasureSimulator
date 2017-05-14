@@ -1,0 +1,26 @@
+{
+  "name": "Dota2TreasureSimulator.git",
+  "version": "1.0.0",
+  "description": "## TODO * Improve JS * Improve SCSS * Improve everything * Add Features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vugluskr86/Dota2TreasureSimulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vugluskr86/Dota2TreasureSimulator/issues"
+  },
+  "homepage": "https://github.com/vugluskr86/Dota2TreasureSimulator#readme",
+  "dependencies": {
+    "async": "^2.4.0",
+    "csvtojson": "^1.1.5",
+    "request": "^2.81.0",
+    "underscore": "^1.8.3"
+  }
+}
