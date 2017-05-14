@@ -1,0 +1,8 @@
+/node_modules
+/.idea
+/.grunt
+/logs/all-logs.log
+/public/*
+/nginx_logs
+/logs
+/payments/request.json
