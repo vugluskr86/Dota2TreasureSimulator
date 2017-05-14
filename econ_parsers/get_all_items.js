@@ -82,7 +82,18 @@ const prices = itemsResult.map(function(i){
     return i.price !== 0
 })
 
-fs.writeFileSync( __dirname + "/prices.json", JSON.stringify(prices, null, 4) )
+const pricesRes = {}
+
+prices.forEach(function(i){
+    var price = parseFloat(i.price)
+
+    var priceRub = price / 100;
+    var course = 57.0;
+
+    pricesRes[i.name] = parseFloat( parseFloat( priceRub / course ).toFixed(2) )
+})
+
+fs.writeFileSync( __dirname + "/prices.json", JSON.stringify(pricesRes) )
 
 // console.log( FillPrice({ name : "Berserker's Pauldron", quality : "", rarity : "Common" }) )
 

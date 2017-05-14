@@ -69,12 +69,15 @@ if __name__ == "__main__":
               #treasure["number"] = int(loot_list_name.split("_")[2])
               
               loots_dict = loot_lists[loot_list_name]
-          
+
               for loot_key, loot_value in loots_dict.items():
                 if loot_key.endswith("_items") or loot_key.endswith("_sets") or loot_key.endswith("_chests") or loot_key.endswith("_wards") or loot_key.endswith("_2015"): #it is a "list pointer" 
                   itemsDict = loot_lists[loot_key];
                   for i in itemsDict.keys():
                     treasure["common_loot"].append({ "name": i, "drop_rate": "common"})
+		elif loot_key.endswith("escalating_chance_drop"):
+		    # print loot_value
+		    treasure["common_loot"].append({ "name": loot_value["item"], "drop_rate": "common"})
                 elif loot_key not in reserved_names: #it is a simple item!
                   treasure["common_loot"].append({ "name": loot_key, "drop_rate": "common"})
                 elif loot_key == "additional_drop": #reserved names, we only care for additional drops
